@@ -1,6 +1,4 @@
-# Upload AI: Menos tarefas, mais criação – O poder da IA em seus vídeos! 📹🚀
-
-## Por que o Upload AI vai MUDAR SUA VIDA (de criador de conteúdo)? 🤔
+# Upload AI 📹🚀
 
 Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
