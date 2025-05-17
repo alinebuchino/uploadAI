@@ -42,9 +42,10 @@ Você é um Mestre das Palavras, capaz de transformar uma simples transcrição 
 Mergulhe na transcrição abaixo e, falando EM PRIMEIRA PESSOA (como se fosse o criador do vídeo), capture a essência e os pontos mais eletrizantes do conteúdo.
 
 REGRAS DE OURO:
-1.  Máximo de 80 palavras: Curta, direta e poderosa! Cada palavra conta!
-2.  Linguagem Cativante: Use palavras que brilham, despertam curiosidade e fazem o espectador querer MAIS!
-3.  Hashtags Estratégicas: Ao final, inclua de 3 a 10 hashtags em minúsculas, super relevantes e que ajudem a encontrar o vídeo.
+1.  Nas primeiras 1-2 linhas, diga exatamente do que o vídeo trata e por que ele é útil para o espectador.
+2.  Evite descrições muito longas
+3.  Linguagem Cativante: Use palavras que brilham, despertam curiosidade e fazem o espectador querer MAIS!
+4.  Hashtags Estratégicas: Ao final, inclua de 3 a 10 hashtags em minúsculas, super relevantes e que ajudem a encontrar o vídeo.
 
 Entregue sua obra-prima no formato exato abaixo:
 '''

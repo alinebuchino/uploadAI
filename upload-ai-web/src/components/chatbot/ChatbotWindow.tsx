@@ -1,4 +1,3 @@
-// src/components/chatbot/ChatbotWindow.tsx
 import React, { useEffect, useRef } from 'react';
 import ChatMessage from './ChatMessage';
 import ChatbotInput from './ChatbotInput';
@@ -14,9 +13,16 @@ interface ChatbotWindowProps {
     onSendMessage: (messageText: string) => void;
     onClose: () => void;
     inputRef: React.RefObject<HTMLInputElement>;
+    isSending?: boolean;
 }
 
-const ChatbotWindow: React.FC<ChatbotWindowProps> = ({ messages, onSendMessage, onClose, inputRef }) => {
+const ChatbotWindow: React.FC<ChatbotWindowProps> = ({
+    messages,
+    onSendMessage,
+    onClose,
+    inputRef,
+    isSending
+}) => {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
@@ -29,7 +35,7 @@ const ChatbotWindow: React.FC<ChatbotWindowProps> = ({ messages, onSendMessage, 
         <div className="chatbot-window">
             <div className="chatbot-header">
                 <span>Assistente do UploadAI</span>
-                <button className="close-btn" onClick={onClose}>×</button>
+                <button className="close-btn" onClick={onClose} aria-label="Fechar chat">×</button>
             </div>
             <div className="chatbot-messages">
                 {messages.map((msg) => (
@@ -37,7 +43,11 @@ const ChatbotWindow: React.FC<ChatbotWindowProps> = ({ messages, onSendMessage, 
                 ))}
                 <div ref={messagesEndRef} />
             </div>
-            <ChatbotInput ref={inputRef} onSendMessage={onSendMessage} />
+            <ChatbotInput
+                ref={inputRef}
+                onSendMessage={onSendMessage}
+                isSending={isSending}
+            />
         </div>
     );
 };

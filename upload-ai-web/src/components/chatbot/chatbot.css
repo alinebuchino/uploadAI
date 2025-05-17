@@ -7,6 +7,10 @@
     z-index: 1000;
 }
 
+.message {
+    font-size: 0.9em;
+}
+
 .message-container {
     display: flex;
     align-items: flex-end;

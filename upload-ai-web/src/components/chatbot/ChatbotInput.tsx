@@ -1,11 +1,11 @@
-// src/components/chatbot/ChatbotInput.tsx
 import React, { forwardRef, useState } from 'react';
 
 interface ChatbotInputProps {
     onSendMessage: (message: string) => void;
+    isSending?: boolean;
 }
 
-const ChatbotInput = forwardRef<HTMLInputElement, ChatbotInputProps>(({ onSendMessage }, ref) => {
+const ChatbotInput = forwardRef<HTMLInputElement, ChatbotInputProps>(({ onSendMessage, isSending }, ref) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,14 +13,15 @@ const ChatbotInput = forwardRef<HTMLInputElement, ChatbotInputProps>(({ onSendMe
     };
 
     const handleSubmit = () => {
-        if (inputValue.trim()) {
-            onSendMessage(inputValue.trim());
-            setInputValue('');
+        if (isSending || !inputValue.trim()) {
+            return;
         }
+        onSendMessage(inputValue.trim());
+        setInputValue('');
     };
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && !isSending) {
             handleSubmit();
         }
     };
@@ -34,8 +35,14 @@ const ChatbotInput = forwardRef<HTMLInputElement, ChatbotInputProps>(({ onSendMe
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
                 placeholder="Digite sua dúvida..."
+                disabled={isSending}
             />
-            <button onClick={handleSubmit}>Enviar</button>
+            <button
+                onClick={handleSubmit}
+                disabled={isSending}
+            >
+                {isSending ? 'Enviando...' : 'Enviar'}
+            </button>
         </div>
     );
 });

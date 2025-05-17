@@ -1,4 +1,3 @@
-// src/components/chatbot/ChatbotWidget.tsx
 import React, { useEffect, useRef, useState } from 'react';
 import './Chatbot.css';
 import ChatbotWindow, { Message } from './ChatbotWindow';
@@ -12,6 +11,7 @@ const ChatbotWidget: React.FC = () => {
             sender: 'bot'
         },
     ]);
+    const [isLoadingBot, setIsLoadingBot] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
     const toggleChatbot = () => {
@@ -25,41 +25,57 @@ const ChatbotWidget: React.FC = () => {
     }, [isOpen]);
 
     const handleSendMessage = (userText: string) => {
+        if (isLoadingBot) return;
         const newUserMessage: Message = { id: `user-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`, text: userText, sender: 'user' };
         setMessages(prevMessages => [...prevMessages, newUserMessage]);
         getBotResponse(userText);
     };
 
-    const getBotResponse = (userText: string) => {
-        const text = userText.toLowerCase().trim();
-        let botText = "Desculpe, não entendi. Poderia reformular?";
+    const getBotResponse = async (userText: string) => {
+        setIsLoadingBot(true);
+        let botMessageText = "Desculpe, não consegui processar sua mensagem no momento. Tente novamente mais tarde.";
 
-        if (text.includes("olá") || text.includes("oi") || text.includes("bom dia") || text.includes("boa tarde")) {
-            botText = "Olá! Tudo bem? Em que posso ser útil?";
-        } else if (text.includes("ajuda") || text.includes("suporte")) {
-            botText = "Claro! Qual sua dúvida ou problema?";
-        } else if (text.includes("preço") || text.includes("valor") || text.includes("custo")) {
-            botText = "Para informações sobre preços, por favor visite nossa página de produtos ou entre em contato com o comercial.";
-        } else if (text.includes("obrigado") || text.includes("obrigada")) {
-            botText = "De nada! Se precisar de mais alguma coisa, é só chamar. 😊";
-        } else if (text.includes("tchau") || text.includes("até mais") || text.includes("adeus")) {
-            botText = "Até logo! Tenha um ótimo dia!";
-        } else if (text.includes("como você está")) {
-            botText = "Estou funcionando perfeitamente, obrigado por perguntar! E você?";
-        }
+        try {
+            const response = await fetch('http://localhost:3333/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userText }),
+            });
 
-        setTimeout(() => {
-            const newBotMessage: Message = { id: `bot-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`, text: botText, sender: 'bot' };
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => null);
+                if (errorData && errorData.error) {
+                    botMessageText = `Erro: ${errorData.error}`;
+                } else {
+                    botMessageText = `Erro do servidor: ${response.statusText || 'Não foi possível obter resposta.'}`;
+                }
+                console.error('Erro ao obter resposta do bot:', response.status, errorData || response.statusText);
+            } else {
+                const data = await response.json();
+                botMessageText = data.reply;
+            }
+        } catch (error) {
+            console.error('Falha na comunicação com o backend:', error);
+        } finally {
+            setIsLoadingBot(false);
+            const newBotMessage: Message = {
+                id: `bot-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+                text: botMessageText,
+                sender: 'bot'
+            };
             setMessages(prevMessages => [...prevMessages, newBotMessage]);
-        }, 700);
+        }
     };
 
     return (
         <div className="chatbot-widget-container">
             {!isOpen && (
-                <button className="chatbot-toggle-button" onClick={toggleChatbot}>
+                <button className="chatbot-toggle-button" onClick={toggleChatbot} aria-label="Abrir chat com Nina">
                     <img
                         src="src/img/nina.png"
+                        alt="Assistente Nina"
                         className="chatbot-toggle-icon"
                     />
                 </button>
@@ -70,6 +86,7 @@ const ChatbotWidget: React.FC = () => {
                     onSendMessage={handleSendMessage}
                     onClose={toggleChatbot}
                     inputRef={inputRef}
+                    isSending={isLoadingBot}
                 />
             )}
         </div>

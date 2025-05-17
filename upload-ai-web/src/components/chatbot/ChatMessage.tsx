@@ -1,4 +1,3 @@
-// src/components/chatbot/ChatMessage.tsx
 import { BotIcon, User } from 'lucide-react';
 import React from 'react';
 

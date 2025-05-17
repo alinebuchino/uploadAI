@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.17.47",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.5.0",
     "prisma": "^5.2.0",
     "tsx": "^3.12.9",
     "typescript": "^5.2.2"
@@ -25,7 +25,11 @@
     "@google/generative-ai": "^0.24.1",
     "@prisma/client": "5.2.0",
     "ai": "^2.2.12",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "fastify": "^4.23.0",
+    "mime-types": "^3.0.1",
+    "react-markdown": "^10.1.0",
     "zod": "^3.22.2"
   }
 }
