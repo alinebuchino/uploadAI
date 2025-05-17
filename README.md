@@ -9,7 +9,9 @@ Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
 **UploadAI** veio para automatizar todas essas tarefas repetitivas!
 
-👉 [Clique aqui para ver o vídeo de demonstração](https://github.com/alinebuchino/uploadAI/UploadAI.mp4)
+<a href="https://github.com/alinebuchino/uploadAI/raw/main/UploadAI.mp4" target="_blank">
+  👉 Clique aqui para ver o vídeo de demonstração
+</a>
 
 
 ![Demonstração do Upload AI](UploadAI.gif)
