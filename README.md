@@ -1,6 +1,4 @@
-<p align="center">
-  # Upload AI 📹🚀
-</p>
+<h1 align="center"><strong>Upload AI 📹🚀</strong></h1>
 
 Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
@@ -11,20 +9,20 @@ Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
 **UploadAI** veio para automatizar todas essas tarefas repetitivas!
 
-![Demonstração do Upload AI](URL_DO_SEU_GIF_ANIMADO.gif)
+![Demonstração do Upload AI](UploadAI.gif)
 
 ---
 
 ## ✨ Resumo de suas principais funcionalidades:
 
-**Com base no conteúdo do seu vídeo, o UploadAI é capaz de:
+**Com base no conteúdo do seu vídeo, o UploadAI é capaz de:**
 
 *   **Gerar Títulos:** Geração de títulos incríveis e irresistível.
 *   **Gerar Descrisções:** Geração de uma descrição sucinta e envolvente.
 *   **Criar Postar:** Criação de posts para diversas plataformas de forma atraente, focado em engajamentos.
 *   **Criar Resumos:** Criação de resumos com comunicação clara e de forma sucinta.
 
-**E não para por aí, o UploadAI também oferece:
+**E não para por aí, o UploadAI também oferece:**
 
 *   **Nina - Assistente Virtual:** ChatBot desenvolvido com o intuito de solucionar dúvidas, guiar e ajudar a extrair o máximo do UploadAI.
 *   **Controle de Temperatura da IA:** Opção para definir o quão criativa e precisa você quer que a IA seja.

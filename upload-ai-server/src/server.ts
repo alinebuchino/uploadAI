@@ -67,7 +67,7 @@ const knowledgeBase = [
 
      },
     { keywords: ["título", "descrição", "gerar texto", "o que é upload ai", "o que upload ai faz", "sobre upload ai"], 
-        info: "Com o Upload AI, você transforma cada vídeo em uma oportunidade real de engajamento e descoberta. Nossa inteligência artificial gera automaticamente títulos envolventes e descrições otimizadas, prontos para captar a atenção do público certo — tudo em poucos segundos." 
+        info: "Com o Upload AI, você transforma cada vídeo em uma oportunidade real de engajamento e descoberta. Nossa inteligência artificial gera automaticamente títulos envolventes, descrições otimizadas, posts viraris para redes sociais e resumos sucintos, prontos para captar a atenção do público certo — tudo em poucos segundos." 
     },
     { keywords: ["temperatura", "o que é", "como usar", "criatividade", "imprevisibilidade"], 
         info: "A funcionalidade de temperatura no contexto de modelos de IA como o Gemini, e que pode ser usada no Upload AI para geração de texto, controla o nível de aleatoriedade ou 'criatividade' nas respostas. Um valor baixo (ex: 0.2) torna a resposta mais focada e determinística. Um valor alto (ex: 0.9) torna a resposta mais diversa e criativa, mas também com maior chance de se desviar do tópico ou cometer erros. No Upload AI, você ajusta a temperatura para controlar o estilo dos títulos e descrições gerados." 
