@@ -1,0 +1,178 @@
+/* src/components/chatbot/Chatbot.css */
+
+.chatbot-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-end;
+    max-width: 90%; 
+}
+.user-container {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+.bot-container {
+    align-self: flex-start;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    margin: 0 8px;
+    flex-shrink: 0; 
+}
+.bot-avatar {
+    background-color: hsl(var(--primary)); 
+    color: hsl(var(--primary-foreground));
+}
+.user-avatar {
+    background-color: hsl(var(--muted)); 
+    color: hsl(var(--muted-foreground));
+}
+.avatar svg { /* Se estiver usando ícones SVG como Lucide */
+    width: 20px;
+    height: 20px;
+}
+
+
+.message {
+    padding: 12px 18px; /* Mais padding interno */
+    max-width: calc(100% - 52px); /* Desconta o avatar e margens */
+    word-wrap: break-word;
+    line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.user-message {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    /* Cantos arredondados de forma mais "chat-like" */
+    border-radius: var(--radius) var(--radius) 0 var(--radius);
+}
+
+.chatbot-toggle-button {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot-window {
+    width: 350px;
+    height: 500px;
+    background-color: hsl(var(--popover, var(--card)));
+    color: hsl(var(--popover-foreground, var(--card-foreground)));
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid hsl(var(--border));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.chatbot-header {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: center;
+}
+
+.chatbot-header .close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.chatbot-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 75%;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.user-message {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.chatbot-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid hsl(var(--border));
+    background-color: hsl(var(--background));
+}
+
+.chatbot-input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid hsl(var(--input));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border-radius: var(--radius);
+    margin-right: 10px;
+    outline: none;
+}
+
+.chatbot-input-area input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.chatbot-input-area button {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.chatbot-input-area button:hover {
+    filter: brightness(0.9);
+}

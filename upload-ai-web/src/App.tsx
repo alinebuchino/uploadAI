@@ -3,6 +3,7 @@
 import { useCompletion } from "ai/react";
 import { Moon, Sun, Wand2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import { PromptSelect } from "./components/prompt-select";
 import { Button } from "./components/ui/button";
 import { Label } from "./components/ui/label";
@@ -31,7 +32,6 @@ function ModeToggleInternal({ currentTheme, toggleTheme }: { currentTheme: strin
       ) : (
         <Moon className="h-5 w-5" />
       )}
-      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 }
@@ -100,6 +100,7 @@ export function App() {
         </div>
       </div>
 
+      <ChatbotWidget />
       <main className="flex-1 p-6 flex gap-6">
         <div className="flex flex-col flex-1 gap-4">
           <div className="grid grid-rows-2 gap-4 flex-1">
@@ -178,6 +179,7 @@ export function App() {
           </form>
         </aside>
       </main>
+      <ChatbotWidget />
     </div>
   );
 }
