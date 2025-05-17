@@ -6,23 +6,25 @@ async function main() {
 
   await prisma.prompt.create({
     data: {
-      title: "Título YouTube",
-      template: `Seu papel é gerar três títulos para um vídeo do YouTube.
+      title: "Título",
+      template: `✨ SUA MISSÃO: CRIAR TÍTULOS CHAMATIVOS! ✨
 
-Abaixo você receberá uma transcrição desse vídeo, use essa transcrição para gerar os títulos.
-Abaixo você também receberá uma lista de títulos, use essa lista como referência para os títulos a serem gerados.
+Você é um especialista em viralização no YouTube! Sua tarefa é gerar CINCO opções de títulos INCRÍVEIS e IRRESISTÍVEIS para um vídeo, com base na transcrição fornecida.
 
-Os títulos devem ter no máximo 60 caracteres.
-Os títulos devem ser chamativos e atrativos para maximizar os cliques.
+REGRAS DE OURO:
+1. Máximo de 60 caracteres: Curto e poderoso!
+2. Hiper Chamativo: Faça as pessoas PARAREM e CLICAREM! Pense em curiosidade, urgência, benefício claro.
 
-Retorne APENAS os três títulos em formato de lista como no exemplo abaixo:
+Retorne APENAS os cinco títulos em formato de lista, assim:
 '''
 - Título 1
 - Título 2
 - Título 3
+- Título 4
+- Título 5
 '''
 
-Transcrição:
+Transcrição do Vídeo (a fonte da sua inspiração!):
 '''
 {transcription}
 '''`.trim(),
@@ -31,26 +33,27 @@ Transcrição:
 
   await prisma.prompt.create({
     data: {
-      title: "Descrição YouTube",
+      title: "Descrição",
       template:
-        `Seu papel é gerar uma descrição sucinta para um vídeo do YouTube.
-  
-Abaixo você receberá uma transcrição desse vídeo, use essa transcrição para gerar a descrição.
+        `✨ SUA MISSÃO: CRIAR UMA DESCRIÇÃO QUE CONECTA E CONVIDA! ✨
 
-A descrição deve possuir no máximo 80 palavras em primeira pessoa contendo os pontos principais do vídeo.
+Você é um Mestre das Palavras, capaz de transformar uma simples transcrição em uma janela para uma experiência! Sua tarefa é gerar uma descrição SUCINTA e ENVOLVENTE para um vídeo do YouTube.
 
-Use palavras chamativas e que cativam a atenção de quem está lendo.
+Mergulhe na transcrição abaixo e, falando EM PRIMEIRA PESSOA (como se fosse o criador do vídeo), capture a essência e os pontos mais eletrizantes do conteúdo.
 
-Além disso, no final da descrição inclua uma lista de 3 até 10 hashtags em letra minúscula contendo palavras-chave do vídeo.
+REGRAS DE OURO:
+1.  Máximo de 80 palavras: Curta, direta e poderosa! Cada palavra conta!
+2.  Linguagem Cativante: Use palavras que brilham, despertam curiosidade e fazem o espectador querer MAIS!
+3.  Hashtags Estratégicas: Ao final, inclua de 3 a 10 hashtags em minúsculas, super relevantes e que ajudem a encontrar o vídeo.
 
-O retorno deve seguir o seguinte formato:
+Entregue sua obra-prima no formato exato abaixo:
 '''
 Descrição.
 
 #hashtag1 #hashtag2 #hashtag3 ...
 '''
 
-Transcrição:
+Fonte da Sua Inspiração (Transcrição):
 '''
 {transcription}
 '''`.trim(),
