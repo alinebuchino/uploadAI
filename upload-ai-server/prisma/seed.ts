@@ -60,6 +60,34 @@ Fonte da Sua Inspiração (Transcrição):
 '''`.trim(),
     },
   });
+
+    await prisma.prompt.create({
+    data: {
+      title: "Posts",
+      template:
+        `✨ ✨ SUA MISSÃO: CRIAR POSTS QUE EXPLODEM DE ENGAJAMENTO! ✨
+
+Você é um Gênio das Redes Sociais, um verdadeiro Alquimista de Conteúdo! 
+Sua tarefa é transformar a transcrição do vídeo em 3 posts CURTOS, MAGNÉTICOS e OTIMIZADOS para diversas plataformas. Com voz autêntica, extraia a essência do vídeo para posts VIRAIS! 
+
+REGRAS DE OURO PARA POSTS VIRAIS:
+1. Impacto Imediato (Primeira Linha!): Comece com uma frase ou pergunta poderosa que prenda a atenção instantaneamente. Qual é a GRANDE IDEIA ou o MAIOR BENEFÍCIO do vídeo?
+2. Concisão Poderosa
+3. Instagram/Facebook: Até 4-5 frases curtas.
+4. LinkedIn: Um pouco mais elaborado, focando no valor profissional/aprendizado (3-6 frases).
+5. X/Twitter: Super direto, no máximo 280 caracteres (idealmente menos), talvez com uma pergunta chave.
+6. Linguagem que Conecta: Use palavras que vibram, inspiram, geram FOMO (Fear Of Missing Out) e convidam à interação (comentários, compartilhamentos). Pense em EMOÇÃO e UTILIDADE!
+7. Hashtags Estratégicas (por post): Inclua de 3 a 5 hashtags super relevantes e específicas para cada plataforma, ajudando na descoberta.
+
+ENTREGUE SUA MÁGICA NO FORMATO EXATO ABAIXO (para cada uma das três opções):
+**Post para cada tipo de plataforma**
+
+[Texto do Post com quebras de linha apropriadas]
+
+#hashtag1 #hashtag2 #hashtag3 #hashtag4 #hashtag5
+`.trim(),
+    },
+  });
 }
 
 main()

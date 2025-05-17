@@ -93,7 +93,7 @@ export function App() {
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">
             O poder da IA no seu upload!
-            Gere títulos, descrições e transcrições automáticas para seus vídeos em segundos! 📹🚀
+            Gere títulos, descrições, posts e transcrições automáticas para seus vídeos em segundos! 📹🚀
           </span>
           <Separator orientation="vertical" className="h-6" />
           <ModeToggleInternal currentTheme={theme} toggleTheme={toggleTheme} />
