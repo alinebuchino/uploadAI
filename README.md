@@ -14,7 +14,7 @@ Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 </a>
 
 
-<img src="UploadAI.gif" alt="Demonstração do Upload AI" width="600"/>
+<img src="UploadAI.gif" alt="Demonstração do Upload AI" width="900"/>
 
 ---
 
