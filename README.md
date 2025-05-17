@@ -11,8 +11,7 @@ Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
 <a href="https://github.com/alinebuchino/uploadAI/raw/main/UploadAI.mp4" target="_blank">
   👉 Clique aqui para ver o vídeo de demonstração
-</a></br>
-
+</a><br>
 
 <img src="UploadAI.gif" alt="Demonstração do Upload AI" width="900"/>
 
