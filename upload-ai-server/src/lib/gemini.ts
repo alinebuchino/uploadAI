@@ -1,4 +1,3 @@
-// src/lib/gemini.ts
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 import 'dotenv/config';
 
