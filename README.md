@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Upload AI 📹🚀</strong></h1>
+<h1 align="center"><strong>Upload AI 🚀📹</strong></h1>
 
 Criar vídeos de qualidade já é um trabalho árduo. Depois vem a luta para:
 
